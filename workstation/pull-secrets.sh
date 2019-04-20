@@ -3,7 +3,7 @@
 set -eu
 
 echo "Authenticating with 1Password"
-export OP_SESSION_my=$(op signin https://my.1password.com ftharsln@gmail.com --output=raw)
+export OP_SESSION_my=$(op signin https://bscott-family.1password.com brian@bscott.io --output=raw)
 
 echo "Pulling secrets"
 # private keys

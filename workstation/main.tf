@@ -1,14 +1,14 @@
 provider "digitalocean" {}
 
-resource "digitalocean_droplet" "dev" {
-  ssh_keys           = [23737229]         # doctl compute ssh-key list
+resource "digitalocean_droplet" "dev0" {
+  ssh_keys           = [10363875]         # doctl compute ssh-key list
   image              = "ubuntu-18-10-x64"
-  region             = "fra1"
+  region             = "SFO2"
   size               = "s-4vcpu-8gb"
   private_networking = true
   backups            = true
   ipv6               = true
-  name               = "dev"
+  name               = "dev0"
 
   # I really hate user-data, don't @ me. This is powerful and works fine for my
   # needs
@@ -49,8 +49,8 @@ resource "digitalocean_droplet" "dev" {
   }
 }
 
-resource "digitalocean_firewall" "dev" {
-  name = "dev"
+resource "digitalocean_firewall" "dev0" {
+  name = "dev0"
 
   droplet_ids = ["${digitalocean_droplet.dev.id}"]
 
@@ -91,5 +91,5 @@ resource "digitalocean_firewall" "dev" {
 }
 
 output "public_ip" {
-  value = "${digitalocean_droplet.dev.ipv4_address}"
+  value = "${digitalocean_droplet.dev0.ipv4_address}"
 }
