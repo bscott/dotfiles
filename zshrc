@@ -238,6 +238,7 @@ exit() {
 #    PLUGINS
 # ===================
 
+# plugins=(git zsh-syntax-highlighting zsh-autosuggestions vscode aws golang)
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
